@@ -45,28 +45,17 @@ a {
 }
 
 .header {
-    position: sticky;
-    inset-block-start: -45px;
+
 }
 
 .header-content {
-    position: relative;
-    inset-block-start: 65px;
+    padding-inline: 20px;
 }
 
 header {
     font-size: 14px;
     color: var(--white);
-    position: absolute;
-    /* top */
-    inset-block-start: 0;
-    /* bottom */
-    /* inset-block-end: ; */
-    /* left */
-    inset-inline-start: -208px;
-    /* right */
-    /* inset-inline-end: ; */
-    inline-size: 188px;
+    margin-block-start: 20px;
 }
 
 /* modal {
@@ -110,8 +99,8 @@ nav details summary {
 } */
 
 h1 {
-    font-size: 60px;
-    margin-block-start: 64px;
+    font-size: 40px;
+    margin-block-start: 20px;
     margin-inline-end: 16px;
 }
 
@@ -156,7 +145,7 @@ p {
 
 .hero {
     background-image: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
-    height: 350px;
+    block-size: 50px;
 }
 
 .section-content img {
@@ -224,4 +213,93 @@ blockquote p {
 .main-content {
     /* border: 1px solid green; */
     padding-inline: 16px;
+}
+
+.slider {
+    /* border: 1px solid red; */
+}
+
+.slider-container {
+    /* block-size: 100px; */
+    display: block; /*Ya que inline no cuenta con alto ni ancho*/
+    overflow: auto; /*Scroll adentro*/ 
+    scroll-behavior: smooth;
+    white-space: nowrap; /*Reduce espacios en blanco, pero suprime saltos de linea del origen.*/
+    font-size: 0; /*Alternativa: overflow-x: hidden*/
+}
+
+.video {
+    margin: 0;
+    display: inline-block; /*Para pasar uno al costado del otro, pero también modificar alto y ancho*/
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+}
+
+.slider-bullet-list {
+    text-align: center;
+    margin-block-start: 10px;
+}
+
+.slider-bullet {
+    display: inline-block;
+    inline-size: 15px;
+    block-size: 15px;
+    background: white;
+    border-radius: 50%;
+}
+
+.form input {
+    inline-size: 100%;
+    border: 1px solid var(--white30);
+    background: #251F24;
+    box-sizing: border-box; /*Para conservar el modelo de caja*/
+    border-radius: 8px;
+    padding-inline: 16px;
+    padding-block: 12px;
+    color: var(--white30);
+    font-size: 16px;
+    display: block; /*En lugar de inline block para tener margin collapsing*/
+    margin-block-end: 24px;
+}
+
+.form input[type="submit"] {
+    background: #1573FB;
+    border: none;
+}
+
+.form input::-webkit-input-placeholder {
+    color: var(--white20);
+}
+
+
+@media screen and (min-width: 1366px) {
+
+.hero {
+    block-size: 350px;
+
+}
+
+.header {
+    position: sticky;
+    inset-block-start: -45px;
+}
+
+.header-content {
+    position: relative;
+    inset-block-start: 65px;
+    padding-inline: 0;
+}
+
+header {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: -208px;
+    inline-size: 188px;
+}
+
+h1 {
+    font-size: 60px;
+    margin-block-start: 64px;
+}
 }
