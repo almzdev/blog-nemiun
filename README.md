@@ -2,6 +2,8 @@
 <img width="120px"  src="https://raw.githubusercontent.com/no-te-rindas/logo/main/Logo/LeonidasEsteban-destello-envolvente-cuadrada.png" />
 </div>
 
+#Nota: Tengo el mismo proyecto en privado, por eso en este hay menos commits.
+
 # Nemium
 ¿Pensando en lanzar tu blog? Con este proyecto podrás crear la estructura de un blog y comenzar a idear que es lo que te gustaría postear.
 
