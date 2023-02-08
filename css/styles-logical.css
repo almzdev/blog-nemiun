@@ -28,61 +28,142 @@
 
 :root {
     font-size: 18px;
-    --gray30: #212121;
-    --gray20: #212429;
-    --gray10: #616161;
+    --white30: white;
+    --white20: #A5A3A5;
+    --white10: #3A3539;
 }
 
 body {
-    color: var(--gray30);
-    /* font-family: charter; */
-    font-family: 'Roboto', sans-serif;
+    color: var(--white30);
+    background-color: #251F24;
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
 }
 
 a {
-    color: var(--gray30);
+    color: var(--white30);
+}
+
+.header {
+    position: sticky;
+    inset-block-start: -45px;
+}
+
+.header-content {
+    position: relative;
+    inset-block-start: 65px;
 }
 
 header {
-    /* Por si se quiere cambiar la variable solo en un contexto sería: ---gray10: red; */
     font-size: 14px;
-    color: var(--gray10);
+    color: var(--white);
+    position: absolute;
+    /* top */
+    inset-block-start: 0;
+    /* bottom */
+    /* inset-block-end: ; */
+    /* left */
+    inset-inline-start: -208px;
+    /* right */
+    /* inset-inline-end: ; */
+    inline-size: 188px;
+}
+
+/* modal {
+    background-color: red;
+    position: fixed;
+    inset: 50px;
+    inset-inline: 50px;
+    block-size: 500px;
+    inset-block: 50px;
+    inline-size: 500px;
+    text-align: start;
+} */
+
+header li {
+    /*Por defecto los LI pintaron del color que deberían, así que no sería necesario especificar pues afecta al hover*/
+    color: var(--white20);
+    margin-block-end: 16px;
 }
 
 header a {
-    color: var(--gray10);
+    color: var(--white20);
     text-decoration: none;
 }
 
 header a:hover {
-    color: var(--gray30);
+    color: var(--white30);
 }
+
+/* 
+header li:hover {
+    color: var(--white30);
+} */
 
 nav details summary {
     font-weight: bold;
 }
 
+/* h1, h2, h3 {
+    font-weight: bold;
+
+} */
+
 h1 {
     font-size: 60px;
-    /* Por ejemplo: Tomando como referencia 16px, serían 3.75em */
+    margin-block-start: 64px;
+    margin-inline-end: 16px;
 }
 
 h2 {
     font-size: 2em;
+    margin-block: 40px;
 }
 
 h3 {
     font-size: 1.5em;
+    font-weight: 600;
+    margin-block: 16px;
+}
+
+hr {
+    margin-block: 40px;
+    border-color:rgba(97, 97, 97, 0.2);
 }
 
 pre {
-    background: #FEC62E;
+    background: var(--white10);
+    padding: 40px;
+    border-radius: 8px;
+    overflow: auto;
+    /* Borders lógicos 
+    border-left: 5px solid red;
+    border-inline-start: 5px solid pink;
+    border-inline-end: 20px solid pink;
+    border-block-end: 20px solid blue;
+    border-block-start: 10px solid green;
+    border-block-start-color: 10px solid green;
+    */
+    border: 10px solid #5551FF;
+    box-shadow: -10px 10px 0 0 #ABAAF6;
+    margin-block-end: 30px;
+    /* border-start-start-radius: 60px; */
+}
+
+p {
+    color: var(--white20);
 }
 
 .hero {
-    /* Acorde a Figma es: background-image:  linear-gradient(3.36deg, #212325 -63.62%, rgba(255, 255, 255, 0) 43.49%), url('../images/pattern.png'); */
-    background-image: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url('../images/pattern.png');
+    background-image: linear-gradient(96.07deg, #314755 30.63%, #26A0DA 102.18%);
     height: 350px;
+}
+
+.section-content img {
+    margin-block-start: 40px;
+    display: block; /*Se cambia el display para que haya margin collapsing (solo es entre blocks)*/
+    /* max-width: 100%; */
+    max-inline-size: 100%;
 }
 
 .section-content {
@@ -90,21 +171,57 @@ pre {
 }
 
 .section-content h3 {
- counter-increment: titleList;
+    counter-increment: titleList;
 }
 
 .section-content h3::before { 
-    content: counter(titleList, decimal) ".";
+    content: counter(titleList, decimal) ". ";
 }
 
-.section-content h3::after {
+/* .section-content h3::after {
     content: '';
     width: 32px;
     height: 4px;
-    background: var(--gray30);
+    background: var(--white30);
     display: inline-block;
+} */
+
+blockquote {
+    margin-block-start: 80px;
+    margin-block-end: 63px;
+    background-color: var(--white10);
+    border-radius: 8px;
+    line-height: 32px;
+    font-size: 24px;
+    /* padding: 24px;  */
+    padding-inline-start: 24px;
+    padding-inline-end: 24px;
+    padding-block-start: 24px;
+    padding-block-end: 24px;
 }
 
-/* ::selection {
-    background: #FEC62E;
-} */
+blockquote p {
+    color: var(--white30);
+}
+
+.main hr {
+    display: none;
+}
+
+.main {
+    /* border: 1px solid blue; */
+}
+
+.wrapper {
+    max-inline-size: 902px;
+    /* max-width: 902px; */
+    /* block-size: 100px; */
+    /* overflow: auto; */
+    margin: auto;
+    /* border: 1px solid yellow; */
+}
+
+.main-content {
+    /* border: 1px solid green; */
+    padding-inline: 16px;
+}
