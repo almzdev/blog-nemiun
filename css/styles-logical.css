@@ -2,7 +2,7 @@
     font-family: charter;
     src: url('../fonts/charter-regular.otf');
     font-style: normal; 
-    font-weight: 400;/*O normal */
+    font-weight: 400;
 }
 
 @font-face {
@@ -58,19 +58,7 @@ header {
     margin-block-start: 20px;
 }
 
-/* modal {
-    background-color: red;
-    position: fixed;
-    inset: 50px;
-    inset-inline: 50px;
-    block-size: 500px;
-    inset-block: 50px;
-    inline-size: 500px;
-    text-align: start;
-} */
-
 header li {
-    /*Por defecto los LI pintaron del color que deberían, así que no sería necesario especificar pues afecta al hover*/
     color: var(--white20);
     margin-block-end: 16px;
 }
@@ -84,19 +72,11 @@ header a:hover {
     color: var(--white30);
 }
 
-/* 
-header li:hover {
-    color: var(--white30);
-} */
 
 nav details summary {
     font-weight: bold;
 }
 
-/* h1, h2, h3 {
-    font-weight: bold;
-
-} */
 
 h1 {
     font-size: 40px;
@@ -125,18 +105,9 @@ pre {
     padding: 40px;
     border-radius: 8px;
     overflow: auto;
-    /* Borders lógicos 
-    border-left: 5px solid red;
-    border-inline-start: 5px solid pink;
-    border-inline-end: 20px solid pink;
-    border-block-end: 20px solid blue;
-    border-block-start: 10px solid green;
-    border-block-start-color: 10px solid green;
-    */
     border: 10px solid #5551FF;
     box-shadow: -10px 10px 0 0 #ABAAF6;
     margin-block-end: 30px;
-    /* border-start-start-radius: 60px; */
 }
 
 p {
@@ -150,8 +121,7 @@ p {
 
 .section-content img {
     margin-block-start: 40px;
-    display: block; /*Se cambia el display para que haya margin collapsing (solo es entre blocks)*/
-    /* max-width: 100%; */
+    display: block;
     max-inline-size: 100%;
 }
 
@@ -166,14 +136,6 @@ p {
 .section-content h3::before { 
     content: counter(titleList, decimal) ". ";
 }
-
-/* .section-content h3::after {
-    content: '';
-    width: 32px;
-    height: 4px;
-    background: var(--white30);
-    display: inline-block;
-} */
 
 blockquote {
     margin-block-start: 80px;
@@ -203,15 +165,10 @@ blockquote p {
 
 .wrapper {
     max-inline-size: 902px;
-    /* max-width: 902px; */
-    /* block-size: 100px; */
-    /* overflow: auto; */
     margin: auto;
-    /* border: 1px solid yellow; */
 }
 
 .main-content {
-    /* border: 1px solid green; */
     padding-inline: 16px;
 }
 
@@ -220,17 +177,16 @@ blockquote p {
 }
 
 .slider-container {
-    /* block-size: 100px; */
-    display: block; /*Ya que inline no cuenta con alto ni ancho*/
-    overflow: auto; /*Scroll adentro*/ 
+    display: block;
+    overflow: auto;
     scroll-behavior: smooth;
-    white-space: nowrap; /*Reduce espacios en blanco, pero suprime saltos de linea del origen.*/
-    font-size: 0; /*Alternativa: overflow-x: hidden*/
+    white-space: nowrap;
+    font-size: 0;
 }
 
 .video {
     margin: 0;
-    display: inline-block; /*Para pasar uno al costado del otro, pero también modificar alto y ancho*/
+    display: inline-block;
     width: 100%;
     height: auto;
     aspect-ratio: 16/9;
@@ -253,13 +209,13 @@ blockquote p {
     inline-size: 100%;
     border: 1px solid var(--white30);
     background: #251F24;
-    box-sizing: border-box; /*Para conservar el modelo de caja*/
+    box-sizing: border-box;
     border-radius: 8px;
     padding-inline: 16px;
     padding-block: 12px;
     color: var(--white30);
     font-size: 16px;
-    display: block; /*En lugar de inline block para tener margin collapsing*/
+    display: block;
     margin-block-end: 24px;
 }
 
